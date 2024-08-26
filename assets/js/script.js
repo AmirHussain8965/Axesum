@@ -65,5 +65,11 @@ $(document).ready(function() {
 });
 
 
-// INPUTS_FOCUS ======================================================
+// SIDEBAR ======================================================
 
+$("#btn_toggle").click(function () {
+    $(".dashboard_sidebar_main_div").toggle("")
+});
+$("#btn_toggle_mobile").click(function () {
+    $(".dashboard_sidebar_main_div").toggle("")
+});
