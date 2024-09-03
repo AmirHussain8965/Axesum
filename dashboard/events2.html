@@ -80,7 +80,7 @@
                             </div>
                         </div>
                         <div class="events_bar_right_btn">
-                            <button type="button">Create Event</button>
+                            <a href="#createEvent" data-bs-toggle="modal"><button type="button">Create Event</button></a>
                         </div>
                     </div>
                     <div class="events_table_main">
@@ -121,6 +121,36 @@
         </div>
     </section>
     
+
+    <div class="modal fade" id="createEvent" tabindex="-1" aria-labelledby="createEventLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content">
+        <div class="modal-body">
+            <div class="createEventmodal_main">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="add_reservation_modal_inner">
+                    <div class="create_event_modal_title">
+                        <h3><img src="../assets/img/oui_filter.svg" alt=""> Filter </h3>
+                    </div>
+                    <div class="create_event_subtititle">
+                        <p>Event Name</p>
+                    </div>
+                    <div class="create_event_modal_inner_main">
+
+                    </div>
+                    
+                    <div class="modal_last_btns" style="justify-content: center; margin-top: 50px;">
+                        <button type="button" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="modalbtn_active">Add</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
 
 
     <script
