@@ -73,3 +73,34 @@ function validateValue(input) {
         document.querySelector('.decrement').disabled = false; // Enable the decrement button if value is more than 1
     }
 }
+
+
+
+document.querySelectorAll('.create_event_modal_check_btns_inner input[type="checkbox"]').forEach(function(checkbox) {
+    checkbox.addEventListener('change', function() {
+        // Toggle background on the parent label
+        if (checkbox.checked) {
+            checkbox.parentElement.style.backgroundColor = '#7B00D9'; // Example background color
+            checkbox.parentElement.style.border = '1px solid #7B00D9'; // Example background color
+        } else {
+            checkbox.parentElement.style.backgroundColor = ''; // Reset background color
+            checkbox.parentElement.style.border = '1px solid #93989A'; // Example background color
+        }
+    });
+});
+
+
+// Get all the audience cards
+const audienceCards = document.querySelectorAll('.choose_audience_card input[type="radio"]');
+
+// Add a 'change' event listener to each radio button
+audienceCards.forEach(radio => {
+    radio.addEventListener('change', function() {
+        // Remove the 'selected' class from all labels
+        document.querySelectorAll('.choose_audience_card').forEach(card => {
+            card.classList.remove('selected');
+        });
+        // Add the 'selected' class to the parent label of the checked radio button
+        this.closest('.choose_audience_card').classList.add('selected');
+    });
+});
