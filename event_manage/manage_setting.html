@@ -359,7 +359,7 @@
                         </div>
                     </div>
                     <div class="dashboard2_setting_card2_body_div">
-                        <div class="dashboard_card2_title mb-3">
+                        <div class="dashboard_card2_title mb-2">
                             <h2>PUBLISH SETTINGS</h2>
                             <p>Is your event Public or Private?</p>
                         </div>
@@ -370,7 +370,7 @@
                                 <span>Shared on axesum and other search engines</span>
                             </label>
                         </div>
-                        <div class="dashboard2_card2_inner pb-3">
+                        <div class="dashboard2_card2_inner">
                             <input type="radio" name="dash" id="Private">
                             <label for="Private">
                                 <p>Private</p>
@@ -386,10 +386,10 @@
                     <p>Assist people in finding your event through relevant tags</p>
                 </div>
                 <div class="dash2_input_div">
-                    <label for="">Enter and Search Tags</label>
-                    <input type="text" id="tag-input" placeholder="Add a tag and press enter">
-                    <div id="tag-container"></div>
-                </div>
+                    <label for="tagInput">Enter and Search Tags</label>
+                    <input id="tagInput" placeholder="Enter tags and press Enter">
+                    <div id="tagsContainer" class="tags-container"></div>
+                  </div>
             </div>
         </div>
        </div>
@@ -404,69 +404,58 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../assets/js/dashboard.js"></script>
+
+
     <script>
-        const tagInput = document.getElementById('tag-input');
-        const tagContainer = document.getElementById('tag-container');
+        const textarea = document.getElementById('tagInput');
+        const tagsContainer = document.getElementById('tagsContainer');
         let tags = [];
 
-        tagInput.addEventListener('keydown', function(event) {
-            if (event.key === 'Enter') {
-                event.preventDefault(); // Prevent default Enter key action (form submission)
-
-                let tagValue = tagInput.value.trim();
-                if (tagValue !== '') {
-                    addTags(tagValue);
-                    tagInput.value = ''; // Clear the input field
-                }
-            }
+        // Function to display the tags
+        function displayTags() {
+        tagsContainer.innerHTML = ''; // Clear the existing tags
+        tags.forEach((tag, index) => {
+            const tagElement = document.createElement('div');
+            tagElement.classList.add('tag');
+            tagElement.innerHTML = `${tag} <span class="remove" data-index="${index}">&times;</span>`;
+            tagsContainer.appendChild(tagElement);
         });
 
-        function addTags(tagString) {
-            // Split tags by comma or space to allow multiple tags at once
-            const newTags = tagString.split(',').map(tag => tag.trim()).filter(tag => tag !== "" && !tags.includes(tag));
-            
-            // Add new tags to the list
-            tags = [...tags, ...newTags];
-            
-            // Update the tag display both visually and in the input
-            updateTags();
-        }
-
-        function updateTags() {
-            // Clear the container
-            tagContainer.innerHTML = '';
-
-            // Display each tag with remove button
-            tags.forEach(tagText => {
-                const tag = document.createElement('div');
-                tag.classList.add('tag');
-
-                const tagLabel = document.createElement('span');
-                tagLabel.textContent = tagText;
-
-                const removeBtn = document.createElement('button');
-                removeBtn.classList.add('remove-tag');
-                removeBtn.innerHTML = '&times;';
-                removeBtn.addEventListener('click', function() {
-                    removeTag(tagText);
-                });
-
-                tag.appendChild(tagLabel);
-                tag.appendChild(removeBtn);
-                tagContainer.appendChild(tag);
+        // Add click event to remove buttons
+        document.querySelectorAll('.remove').forEach(removeBtn => {
+            removeBtn.addEventListener('click', function() {
+            const index = this.getAttribute('data-index');
+            removeTag(index);
             });
-
-            // Show tags as comma-separated values in the input field
-            tagInput.value = tags.join(', ');
+        });
         }
 
-        function removeTag(tagText) {
-            tags = tags.filter(tag => tag !== tagText);
-            updateTags();
+        // Function to add a new tag
+        function addTag(tag) {
+        if (tag && !tags.includes(tag)) {
+            tags.push(tag);
+            displayTags();
+        }
         }
 
+        // Function to remove a tag
+        function removeTag(index) {
+        tags.splice(index, 1);
+        displayTags();
+        }
+
+        // Event listener for the textarea
+        textarea.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault(); // Prevent default behavior of Enter key
+            const tag = textarea.value.trim();
+            addTag(tag);
+            textarea.value = ''; // Clear the textarea after adding the tag
+        }
+        });
 
     </script>
+
 </body>
 
 </html>
