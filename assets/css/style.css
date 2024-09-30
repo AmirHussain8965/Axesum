@@ -91,7 +91,7 @@ body{
 } 
 .dropdown-toggle::after{
     content: '';
-    background-image: url(../../assets/img/Vector.svg);
+    background-image: url(../../assets/img/arrow_down.svg);
     height: 6px;
     width: 11px;
     background-repeat: no-repeat;
