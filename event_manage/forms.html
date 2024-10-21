@@ -254,13 +254,149 @@
                           <h3> New Question</h3>
                       </div>
                         <div class="add_tick1_content mt-2">
-                          <p class="event_info">Google Analytics pixel</p>
                             <div class="add_tick_tabs_input">
-                                <input type="text" id="" placeholder="">
+                                <input type="text" id="" placeholder="Gender ?">
                                 <label for="">Question title*</label> 
                             </div>
-                            <p class="modal_gray_txt">This is the specific ID code associated with your Facebook pixel</p>
+                            <div class="add_tick_tabs_input">
+                                <input type="text" id="" placeholder="What’s your Gender ?">
+                                <label for="">Help Text*</label> 
+                            </div>
+                            
+                            <h6 class="text-light mt-3">Select the type of answer you want</h6>
   
+                            <div class="new_question_tabs_main">
+                                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                      <button class="nav-link active" id="pills-Question1-tab" data-bs-toggle="pill" data-bs-target="#pills-Question1" type="button" role="tab" aria-controls="pills-Question1" aria-selected="true">
+                                        <img src="../assets/img/q1.svg" alt="">Text
+                                      </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                      <button class="nav-link" id="pills-Question2-tab" data-bs-toggle="pill" data-bs-target="#pills-Question2" type="button" role="tab" aria-controls="pills-Question2" aria-selected="false">
+                                        <img src="../assets/img/q2.svg" alt="">Social Media
+                                      </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                      <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-Question3" type="button" role="tab" aria-controls="pills-Question3" aria-selected="false">
+                                        <img src="../assets/img/q3.svg" alt="">Phone Number
+                                      </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="pills-Question4-tab" data-bs-toggle="pill" data-bs-target="#pills-Question4" type="button" role="tab" aria-controls="pills-Question4" aria-selected="false">
+                                          <img src="../assets/img/q4.svg" alt="">Dropdown
+                                        </button>
+                                      </li>
+                                      <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="pills-Question5-tab" data-bs-toggle="pill" data-bs-target="#pills-Question5" type="button" role="tab" aria-controls="pills-Question5" aria-selected="false">
+                                          <img src="../assets/img/q5.svg" alt="">Single Select
+                                        </button>
+                                      </li>
+                                      <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="pills-Question6-tab" data-bs-toggle="pill" data-bs-target="#pills-Question6" type="button" role="tab" aria-controls="pills-Question6" aria-selected="false">
+                                          <img src="../assets/img/q6.svg" alt="">Checkbox
+                                        </button>
+                                      </li>
+                                      <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="pills-Question7-tab" data-bs-toggle="pill" data-bs-target="#pills-Question7" type="button" role="tab" aria-controls="pills-Question7" aria-selected="false">
+                                          <img src="../assets/img/q7.svg" alt="">Terms & Conditions
+                                        </button>
+                                      </li>
+                                      <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="pills-Question8-tab" data-bs-toggle="pill" data-bs-target="#pills-Question8" type="button" role="tab" aria-controls="pills-Question8" aria-selected="false">
+                                          <img src="../assets/img/q8.svg" alt="">Date
+                                        </button>
+                                      </li>
+                                  </ul>
+                                  <div class="tab-content" id="pills-tabContent">
+                                    <div class="tab-pane fade show active" id="pills-Question1" role="tabpanel" aria-labelledby="pills-Question1-tab" tabindex="0">
+                                      <div class="question_tab_content">
+                                        <div class="question_tab1_inner">
+                                          <p class="que_txt1">Response Length</p>
+                                          <div class="que_tab2_main">
+                                            <button type="button"><img src="../assets/img/T.png" alt="">Single Line</button>
+                                            <button type="button" class="active"><img src="../assets/img/majesticons_text.png" alt="">Multi-Line</button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-Question2" role="tabpanel" aria-labelledby="pills-Question2-tab" tabindex="0">
+                                      <div class="question_tab_content">
+                                        <div class="question_tab2_inner">
+                                          <p class="que_txt1">Dropdown</p>
+                                          <div class="dash2_input_div">
+                                            <label for="">Ticket type*</label>
+                                            <select name="" id="" class="form-select">
+                                              <option value="">Facebook</option>
+                                              <option value="">Twitter</option>
+                                              <option value="">Instagram</option>
+                                            </select>
+                                          </div> 
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-Question3" role="tabpanel" aria-labelledby="pills-Question3-tab" tabindex="0">
+                                      <div class="question_tab_content">
+                                        <div class="question_tab3_inner">
+                                          <p class="que_txt1">Text Box</p>
+                                          <div class="dash2_input_div">
+                                            <textarea name="" id="" cols="" rows="5" placeholder="I agree with Terms & Conditions given below:"></textarea>                                           
+                                          </div> 
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-Question4" role="tabpanel" aria-labelledby="pills-Question4-tab" tabindex="0">
+                                      <div class="question_tab_content">
+
+                                      </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-Question5" role="tabpanel" aria-labelledby="pills-Question5-tab" tabindex="0">
+                                      <div class="question_tab_content">
+                                        <div class="question_tab5_inner">
+                                          <p class="que_txt1">Add Options</p>
+                                          <p class="que_txt2 mb-2">+ Add Another Option</p>
+                                          <div class="question_tab1_inner_add_ques">
+                                            <input type="text" placeholder="Male">
+                                            <img src="../assets/img/delete.svg" alt="">
+                                          </div>
+                                          <div class="question_tab1_inner_add_ques">
+                                            <input type="text" placeholder="Female">
+                                            <img src="../assets/img/delete.svg" alt="">
+                                          </div>
+                                          <div class="dash2_input_div">
+                                            <label for="">Ticket type*</label>
+                                            <select name="" id="" class="form-select">
+                                              <option value="">All</option>
+                                              <option value="">REGULAR</option>
+                                              <option value="">COURTESY</option>
+                                              <option value="">VIP</option>
+                                            </select>
+                                          </div> 
+                                          <div class="que_checkbox">
+                                            <input type="checkbox" id="Mandatory">
+                                            <label for="Mandatory">Mark as Mandatory</label>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-Question6" role="tabpanel" aria-labelledby="pills-Question6-tab" tabindex="0">
+                                      <div class="question_tab_content">
+
+                                      </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-Question7" role="tabpanel" aria-labelledby="pills-Question7-tab" tabindex="0">
+                                      <div class="question_tab_content">
+
+                                      </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-Question8" role="tabpanel" aria-labelledby="pills-Question8-tab" tabindex="0">
+                                      <div class="question_tab_content">
+
+                                      </div>
+                                    </div>
+                            </div>
+
+                            
                             <div class="modal_last_btns" style="margin-top: 50px;">
                                  <button type="button"
                                      data-bs-dismiss="modal">Cancel</button>
